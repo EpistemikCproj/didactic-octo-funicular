@@ -1,0 +1,302 @@
+# 1 "apr1.c"
+# 1 "d:/progra~1/djgpp/include/stdio.h" 1 3
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+# 1 "d:/progra~1/djgpp/include/sys/version.h" 1 3
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 13 "d:/progra~1/djgpp/include/stdio.h" 2 3
+
+# 1 "d:/progra~1/djgpp/include/sys/djtypes.h" 1 3
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+# 14 "d:/progra~1/djgpp/include/stdio.h" 2 3
+
+  
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef void *va_list; 
+
+
+typedef long unsigned int size_t; 
+
+
+
+ 
+
+
+   
+typedef struct {
+  int   _cnt;
+  char *_ptr;
+  char *_base;
+  int   _bufsiz;
+  int   _flag;
+  int   _file;
+  char *_name_to_remove;
+  int   _fillsize;
+} FILE;
+
+typedef unsigned long		fpos_t;
+
+extern FILE __dj_stdin, __dj_stdout, __dj_stderr;
+
+
+
+
+void	clearerr(FILE *_stream);
+int	fclose(FILE *_stream);
+int	feof(FILE *_stream);
+int	ferror(FILE *_stream);
+int	fflush(FILE *_stream);
+int	fgetc(FILE *_stream);
+int	fgetpos(FILE *_stream, fpos_t *_pos);
+char *	fgets(char *_s, int _n, FILE *_stream);
+FILE *	fopen(const char *_filename, const char *_mode);
+int	fprintf(FILE *_stream, const char *_format, ...);
+int	fputc(int _c, FILE *_stream);
+int	fputs(const char *_s, FILE *_stream);
+size_t	fread(void *_ptr, size_t _size, size_t _nelem, FILE *_stream);
+FILE *	freopen(const char *_filename, const char *_mode, FILE *_stream);
+int	fscanf(FILE *_stream, const char *_format, ...);
+int	fseek(FILE *_stream, long _offset, int _mode);
+int	fsetpos(FILE *_stream, const fpos_t *_pos);
+long	ftell(FILE *_stream);
+size_t	fwrite(const void *_ptr, size_t _size, size_t _nelem, FILE *_stream);
+int	getc(FILE *_stream);
+int	getchar(void);
+char *	gets(char *_s);
+void	perror(const char *_s);
+int	printf(const char *_format, ...);
+int	putc(int _c, FILE *_stream);
+int	putchar(int _c);
+int	puts(const char *_s);
+int	remove(const char *_filename);
+int	rename(const char *_old, const char *_new);
+void	rewind(FILE *_stream);
+int	scanf(const char *_format, ...);
+void	setbuf(FILE *_stream, char *_buf);
+int	setvbuf(FILE *_stream, char *_buf, int _mode, size_t _size);
+int	sprintf(char *_s, const char *_format, ...);
+int	sscanf(const char *_s, const char *_format, ...);
+FILE *	tmpfile(void);
+char *	tmpnam(char *_s);
+int	ungetc(int _c, FILE *_stream);
+int	vfprintf(FILE *_stream, const char *_format, va_list _ap);
+int	vprintf(const char *_format, va_list _ap);
+int	vsprintf(char *_s, const char *_format, va_list _ap);
+
+
+
+
+
+ 
+
+int	fileno(FILE *_stream);
+FILE *	fdopen(int _fildes, const char *_type);
+int	pclose(FILE *_pf);
+FILE *	popen(const char *_command, const char *_mode);
+
+
+
+extern FILE __dj_stdprn, __dj_stdaux;
+
+
+
+
+
+void	_djstat_describe_lossage(FILE *_to_where);
+int	_doprnt(const char *_fmt, va_list _args, FILE *_f);
+int	_doscan(FILE *_f, const char *_fmt, void **_argp);
+int	_doscan_low(FILE *, int (*)(FILE *_get), int (*_unget)(int, FILE *), const char *_fmt, void **_argp);
+int	fpurge(FILE *_f);
+int	getw(FILE *_f);
+int	mkstemp(char *_template);
+char *	mktemp(char *_template);
+int	putw(int _v, FILE *_f);
+void	setbuffer(FILE *_f, void *_buf, int _size);
+void	setlinebuf(FILE *_f);
+char *	tempnam(const char *_dir, const char *_prefix);
+int	_rename(const char *_old, const char *_new);	 
+int	vfscanf(FILE *_stream, const char *_format, va_list _ap);
+int	vscanf(const char *_format, va_list _ap);
+int	vsscanf(const char *_s, const char *_format, va_list _ap);
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 1 "apr1.c" 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   int  main 
+                   (  void 
+                   )  { 
+
+                   unsigned  long 
+                  ww   [ 
+                  ]    = 
+                   {  1275678223 
+
+,  223358231  ,  942800930  ,  1426395964  ,     637602332  ,  353174034  ,  709379359  ,  1295460160  , 
+892273737     ,                 506856216              ,     1414996287 
+,     604783114     ,  1129261318  ,     876481060     ,  1026314584  ,  877025626     } 
+;     char     *     xx    =     "Some"        " C pr"     "ograms ar" 
+"e easy to read. Others are not. I like cryptic ones best"     ". How abo"     "ut yo"     "u?\n"     ;     unsigned     yy ;     int 
+zz          ;     for     (     yy    =        0 
+;  yy <     ww    [     0     ]     %  (     2 
+*     2     *     2     *     2     )  +     ww
+[     2     ]     %     (     2     +  2     + 
+2     +     2           /     2     )        ; 
+yy    ++     )  for  (     zz    =     sizeof     ww / 
+sizeof           ww    [           0     ]        * 
+(     ww [  2     /  2  ]     %     (        ww
+[     2     +     2     /     2           ]  % 
+(           2     *     2     *  2  *     2  * 
+2     +  2  /           2           )        ) 
+)                 >>     (  ww [     2     *  2 
+*  2  ]     /     (     2     +     2     +  2 
+)     [     ww    ]  )  ;     zz          >  2 
+/     2     -           2     ;  zz -=  sizeof  ww / 
+sizeof           ww [  0     ]                    >> 
+(  2  /  2  )           )  putchar  (  (  (  ww    [ 
+yy                ]     >>                    zz
+)     &  (  ww [  2           +  2  +  2  ]  / 
+2781879     )  )  [  xx ]  )  ;  return  0  <  -  2  ;  } 
+
+
+
